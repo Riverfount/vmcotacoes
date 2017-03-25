@@ -1,7 +1,11 @@
-import os, bottle
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 
+import os
+import bottle
 from app import app
+
 
 if __name__ == '__main__':
     bottle.TEMPLATE_PATH.insert(0, 'app/views/')

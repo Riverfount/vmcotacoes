@@ -5,27 +5,25 @@
 import requests
 import json
 import time
-import re
+from htmltag import a
 
 
 def cotar():
+
     moeda = dict()
     try:
         req = requests.get("http://api.promasters.net.br/cotacao/v1/valores")
         moeda = json.loads(req.text)
         for key in moeda["valores"]:
             moeda["valores"][key]["ultima_consulta"] = time.strftime("%Hh.%Mmin. de %d/%b/%Y",
-                                                                     time.localtime(moeda["valores"][key]["ultima_consulta"]))
+                                                       time.localtime(moeda["valores"][key]["ultima_consulta"]))
+
             moeda["valores"][key]["valor"] = "%.2f" % moeda["valores"][key]["valor"]
+
+            extraido = str.split(moeda["valores"][key]["fonte"], "-")
+            moeda["valores"][key]["fonte"] = extraido[0] + " - " + a(extraido[1].lstrip(), href = extraido[1].lstrip())
+
         return moeda
-    except Exception as err:
+    except:
         return moeda
 
-'''
-if __name__ == "__main__":
-    dicionario = cotar()
-    print(dicionario)
-    if dicionario:
-        dicionario["valores"]["EUR"]["valor"] = "%.2f" % dicionario["valores"]["EUR"]["valor"]
-        print(dicionario["valores"]["EUR"]["valor"])
-'''

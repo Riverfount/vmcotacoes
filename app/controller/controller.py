@@ -1,6 +1,11 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+
 from app import app
 from app.models import model
-from bottle import template, static_file
+from bottle import template
+from bottle import static_file
 
 
 # Static Routes
