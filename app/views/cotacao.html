@@ -1,0 +1,143 @@
+% rebase('base.html')
+
+    <!-- CONTAINER BEGIN -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br />
+                <h2>Cotações</h2>
+                <h5>Code write by <strong>Vicente Marçal</strong> Desenvolvedor Python/Bottle</h5>
+                <h6>
+                    Design by <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
+                </h6>
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+                <div class="fancy-collapse-panel">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                       aria-expanded="true" aria-controls="collapseOne">
+                                       Cotação do Dolar em R$
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p>
+                                       Cotado a: R$ {{ dicionario['valores']['USD']['valor'] }}
+                                    </p>
+                                    <p>
+                                       Última consulta às {{ dicionario['valores']['USD']['ultima_consulta'] }}
+                                    </p>
+                                    <p>
+                                       Fonte: {{ dicionario['valores']['USD']['fonte'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                       Cotação do Euro em R$
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>
+                                       Cotado a: R$ {{ dicionario['valores']['EUR']['valor'] }}
+                                    </p>
+                                    <p>
+                                       Última consulta às {{ dicionario['valores']['EUR']['ultima_consulta'] }}
+                                    </p>
+                                    <p>
+                                       Fonte: {{ dicionario['valores']['EUR']['fonte'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                       Cotação de Libra Esterlina em R$
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>
+                                       Cotado a: R$ {{ dicionario['valores']['GBP']['valor'] }}
+                                    </p>
+                                    <p>
+                                       Última consulta às {{ dicionario['valores']['GBP']['ultima_consulta'] }}
+                                    </p>
+                                    <p>
+                                       Fonte: {{ dicionario['valores']['GBP']['fonte'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Cotação do BitCoin em R$
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body" >
+                                    <p>
+                                       Cotado a: R$ {{ dicionario['valores']['BTC']['valor'] }}
+                                    </p>
+                                    <p>
+                                       Última consulta às {{ dicionario['valores']['BTC']['ultima_consulta'] }}
+                                    </p>
+                                    <p>
+                                       Fonte: {{ dicionario['valores']['BTC']['fonte'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Cotação do Peso Argentino em R$
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFive">
+                                <div class="panel-body" >
+                                    <p>
+                                       Cotado a: R$ {{ dicionario['valores']['ARS']['valor'] }}
+                                    </p>
+                                    <p>
+                                       Última consulta às {{ dicionario['valores']['ARS']['ultima_consulta'] }}
+                                    </p>
+                                    <p>
+                                       Fonte: {{ dicionario['valores']['ARS']['fonte'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONATINER END -->
