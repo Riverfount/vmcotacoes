@@ -10,6 +10,6 @@ seguintes modas:
 - Biticoins
 
 A aplicação procurou seguir o padrão MVC utilizando-se do micro framework
-Bottle.
+Bottle para o back-end e o framework BootStrap para o front-end.
 
 É experimental e toda contribuição e crítica será bem vinda.
