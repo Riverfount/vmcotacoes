@@ -5,7 +5,6 @@
 import requests
 import json
 import time
-from htmltag import a
 
 
 def cotar():
@@ -20,8 +19,8 @@ def cotar():
 
             moeda["valores"][key]["valor"] = "%.2f" % moeda["valores"][key]["valor"]
 
-            extraido = str.split(moeda["valores"][key]["fonte"], "-")
-            moeda["valores"][key]["fonte"] = extraido[0] + " - " + a(extraido[1].lstrip(), href = extraido[1].lstrip())
+            partes = str.split(moeda["valores"][key]["fonte"], "-")
+            moeda["valores"][key]["fonte"] = partes[0] + " - " + '<a href="' + partes[1] + '">' + partes[1] + "</a>"
 
         return moeda
     except:
