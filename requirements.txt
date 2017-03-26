@@ -1,13 +1,6 @@
-appdirs==1.4.3
 bottle==0.12.13
-get==0.0.0
-packaging==16.8
-post==0.0.0
-public==0.0.0
 pyparsing==2.2.0
-query-string==0.0.0
 requests==2.9.1
-setupfiles==0.0.0
 six==1.10.0
 htmltag==1.7
 
