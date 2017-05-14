@@ -8,6 +8,7 @@ __pycache__/
 
 # Diretória Configurações do PyCharm
 .idea/
+.appbottle
 
 # Distribution / packaging
 .Python
