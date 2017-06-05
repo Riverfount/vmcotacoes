@@ -1,7 +1,3 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-
-
 from app import app
 from app.models import model
 from bottle import template
@@ -29,7 +25,6 @@ def images(filename):
 @app.get('/<filename:re:.*\.(eot|ttf|woff|svg)>')
 def fonts(filename):
     return static_file(filename, root='app/static/fonts')
-
 
 
 @app.route('/')

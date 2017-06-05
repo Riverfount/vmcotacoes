@@ -6,7 +6,13 @@
             <div class="col-md-12 text-center">
                 <br />
                 <h2>Cotações</h2>
-                <h5>Code write by <strong><i class="fa fa-rebel"></i> Vicente Marçal</strong> Desenvolvedor Python/Bottle</h5>
+                <h5>Code write by
+                    <i class="fa fa-rebel"></i>
+                    <strong>
+                      <a href="http://github.com/Riverfount"> Vicente Marçal</a>
+                    </strong> Desenvolvedor
+                    Python/Bottle
+                </h5>
                 <h6>
                     Design by <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
                 </h6>
@@ -29,15 +35,18 @@
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <p class="lead">
-                                       Cotado a: R$ {{ dicionario['valores']['USD']['valor'] }}
+                                        Cotado a: <span class="bg-success">R$ {{ dicionario['rates']['USD'] }}</span>
                                     </p>
                                     <p>
                                        <small>
-                                           Última consulta às {{dicionario['valores']['USD']['ultima_consulta'] }}
+                                           Última consulta em {{dicionario['date'] }}
                                        </small>
                                     </p>
                                     <p>
-                                        <small>Fonte: {{ !dicionario['valores']['USD']['fonte'] }}</small>
+                                        <small>Fonte: <a href="https://www.ecb.europa.eu/home/html/index.en.html">
+                                                          Banco Central Europeu
+                                                      </a>
+                                        </small>
                                     </p>
                                 </div>
                             </div>
@@ -55,15 +64,18 @@
                                  aria-labelledby="headingTwo">
                                 <div class="panel-body">
                                     <p class="lead">
-                                       Cotado a: R$ {{ dicionario['valores']['EUR']['valor'] }}
+                                        Cotado a: <span class="bg-success">R$ {{ dicionario['rates']['EUR'] }}</span>
                                     </p>
                                     <p>
                                         <small>
-                                            Última consulta às {{ dicionario['valores']['EUR']['ultima_consulta'] }}
+                                            Última consulta em {{ dicionario['date'] }}
                                         </small>
                                     </p>
                                     <p>
-                                       <small>Fonte: {{ !dicionario['valores']['EUR']['fonte'] }}</small>
+                                       <small>Fonte: <a href="https://www.ecb.europa.eu/home/html/index.en.html">
+                                                          Banco Central Europeu
+                                                      </a>
+                                       </small>
                                     </p>
                                 </div>
                             </div>
@@ -80,15 +92,18 @@
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
                                     <p class="lead">
-                                       Cotado a: R$ {{ dicionario['valores']['GBP']['valor'] }}
+                                        Cotado a: <span class="bg-success">R$ {{ dicionario['rates']['GBP'] }}</span>
                                     </p>
                                     <p>
                                         <small>
-                                            Última consulta às {{ dicionario['valores']['GBP']['ultima_consulta'] }}
+                                            Última consulta em {{ dicionario['date'] }}
                                         </small>
                                     </p>
                                     <p>
-                                        <small>Fonte: {{ !dicionario['valores']['GBP']['fonte'] }}</small>
+                                        <small>Fonte: <a href="https://www.ecb.europa.eu/home/html/index.en.html">
+                                                          Banco Central Europeu
+                                                      </a>
+                                        </small>
                                     </p>
                                 </div>
                             </div>
@@ -98,7 +113,7 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        Cotação (<i class="fa fa-bitcoin" aria-hidden="true"></i>) BitCoin em R$
+                                        Cotação (<i class="fa fa-jpy" aria-hidden="true"></i>) Yene em R$
                                     </a>
                                 </h4>
                             </div>
@@ -106,41 +121,18 @@
                                  aria-labelledby="headingFour">
                                 <div class="panel-body" >
                                     <p class="lead">
-                                       Cotado a: R$ {{ dicionario['valores']['BTC']['valor'] }}
+                                        Cotado a: <span class="bg-success">R$ {{ dicionario['rates']['JPY'] }}</span>
                                     </p>
                                     <p>
                                         <small>
-                                            Última consulta às {{ dicionario['valores']['BTC']['ultima_consulta'] }}
+                                            Última consulta em {{ dicionario['date'] }}
                                         </small>
                                     </p>
                                     <p>
-                                        <small>Fonte: {{ !dicionario['valores']['BTC']['fonte'] }}</small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Cotação (<i class="fa fa-money" aria-hidden="true"></i>) Peso Argentino em R$
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
-                                 aria-labelledby="headingFive">
-                                <div class="panel-body" >
-                                    <p class="lead">
-                                       Cotado a: R$ {{ dicionario['valores']['ARS']['valor'] }}
-                                    </p>
-                                    <p>
-                                        <small>
-                                            Última consulta às {{ dicionario['valores']['ARS']['ultima_consulta'] }}
+                                        <small>Fonte: <a href="https://www.ecb.europa.eu/home/html/index.en.html">
+                                                          Banco Central Europeu
+                                                      </a>
                                         </small>
-                                    </p>
-                                    <p>
-                                        <small>Fonte: {{ !dicionario['valores']['ARS']['fonte'] }}</small>
                                     </p>
                                 </div>
                             </div>
