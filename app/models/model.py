@@ -1,18 +1,18 @@
 from yahoo_finance import Currency
+from datetime import datetime
 
 
 def cotar():
 
-    usd_brl = Currency('USDBRL')
-    eur_brl = Currency('EURBRL')
-    gbp_brl = Currency('GBPBRL')
-    jpy_brl = Currency('JPYBRL')
+    usd_brl, eur_brl, gbp_brl, jpy_brl = Currency('USDBRL'), Currency('EURBRL'), Currency('GBPBRL'), Currency('JPYBRL')
 
-    usd_data = usd_brl.get_trade_datetime()[:10]
+    data = datetime.strptime(usd_brl.get_trade_datetime()[:-9], '%Y-%m-%d %H:%M:%S')
+    data = datetime.strftime(data, '%d/%m/%Y as %Hh %Mmin.')
+
 
     moeda = {
         'base': 'BRL',
-        'date': usd_data,
+        'date': data,
         'rates': {
             'GBP': f'{float(gbp_brl.get_ask()):.2f}',
             'JPY': f'{float(jpy_brl.get_ask()):.2f}',
