@@ -1,14 +1,24 @@
-import requests
-import json
+from yahoo_finance import Currency
 
 
 def cotar():
 
-    req = requests.get("http://api.fixer.io/latest?base=BRL&symbols=USD,GBP,EUR,JPY")
-    moeda = json.loads(req.text)
+    usd_brl = Currency('USDBRL')
+    eur_brl = Currency('EURBRL')
+    gbp_brl = Currency('GBPBRL')
+    jpy_brl = Currency('JPYBRL')
 
-    for key in moeda['rates']:
-        moeda['rates'][key] = '%.2f' % (1/moeda['rates'][key])
+    usd_data = usd_brl.get_trade_datetime()[:10]
+
+    moeda = {
+        'base': 'BRL',
+        'date': usd_data,
+        'rates': {
+            'GBP': f'{float(gbp_brl.get_ask()):.2f}',
+            'JPY': f'{float(jpy_brl.get_ask()):.2f}',
+            'USD': f'{float(usd_brl.get_ask()):.2f}',
+            'EUR': f'{float(eur_brl.get_ask()):.2f}'
+        }
+    }
 
     return moeda
-
