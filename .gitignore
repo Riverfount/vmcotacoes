@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+tmp_cotar_bceuropeu.py
+
+tmp_cotar_bceuropeu.py
 
 # C extensions
 *.so
