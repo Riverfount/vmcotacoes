@@ -14,15 +14,11 @@ def cotar():
         'base': 'BRL',
         'date': data,
         'rates': {
-            'GBP': f'{float(gbp_brl.get_ask()):.3f}',
-            'JPY': f'{float(jpy_brl.get_ask()):.3f}',
-            'USD': f'{float(usd_brl.get_ask()):.3f}',
-            'EUR': f'{float(eur_brl.get_ask()):.3f}'
+            'GBP': f'{float(gbp_brl.get_ask()):.2f}',
+            'JPY': f'{float(jpy_brl.get_ask()):.2f}',
+            'USD': f'{float(usd_brl.get_ask()):.2f}',
+            'EUR': f'{float(eur_brl.get_ask()):.2f}'
         }
     }
 
     return moeda
-
-if __name__ == '__main__':
-    dicionario = cotar()
-    print(dicionario)
