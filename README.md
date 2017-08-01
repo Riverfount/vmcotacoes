@@ -1,5 +1,10 @@
 # Projeo Cotações de Moedas estrangeiras
 
+[![Updates](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
+[![Python 3](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
+
+
+
 Pequena aplicação desenvolvida em **Python** que utiliza a biblioteca 
 [yahoo-finance](https://github.com/lukaszbanasiak/yahoo-finance), de autoria de 
 [lukaszbanasiak](https://github.com/lukaszbanasiak), apresentando a cotação das
