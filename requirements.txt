@@ -1,5 +1,5 @@
 bottle==0.12.13
 pytz==2017.2
-requests==2.9.1
+requests==2.18.2
 simplejson==3.10.0
 yahoo-finance==1.4.0
