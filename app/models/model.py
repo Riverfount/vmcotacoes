@@ -1,23 +1,40 @@
-from yahoo_finance import Currency
+import requests
 from datetime import datetime
+from decouple import config
 
 
 def cotar():
 
-    usd_brl, eur_brl, gbp_brl, jpy_brl = Currency('USDBRL'), Currency('EURBRL'), Currency('GBPBRL'), Currency('JPYBRL')
+    # Configurações para realizar a consulta das cotações
+    api_key = config('api_key')  # Chave de Autenticação do Serviço
+    currencies = 'BRL, EUR, GBP, BTC'  # Moedas que serão cotadas
 
-    data = datetime.strptime(usd_brl.get_trade_datetime()[:-9], '%Y-%m-%d %H:%M:%S')
-    data = datetime.strftime(data, '%d/%m/%Y')
+    # Faz a cotação na API do CurrencyLayer
 
+    queue = requests.get(f'http://apilayer.net/api/live?access_key={api_key}&currencies={currencies}&format=1')
+    moedas = queue.json() # Converte os dados recebidos em JSON num dicionário Python
+
+    # Se houve algum erro na consulta, retorna um dcionário com o Código e Mensagem de Erro
+    if not moedas['success']:
+        mensagem = {
+            'sucesso': moedas['success'],
+            'code': f'{moedas["error"]["code"]}',
+            'info': f'{moedas["error"]["info"]}',
+        }
+        return mensagem
+
+    time = datetime.fromtimestamp(moedas['timestamp']) # Converte o Timestamp em dada em formato para humanos
+
+    # Constrói o diconário de retorno com a data, hora e cotações do Dólar, Euro, Libra Esterlina e Biticoins
 
     moeda = {
-        'base': 'BRL',
-        'date': data,
+        'sucesso': moedas['success'],
+        'date': f'{time.day}/{time.month}/{time.year} as {time.hour}h{time.minute}min.',
         'rates': {
-            'GBP': f'{float(gbp_brl.get_ask()):.2f}',
-            'JPY': f'{float(jpy_brl.get_ask()):.2f}',
-            'USD': f'{float(usd_brl.get_ask()):.2f}',
-            'EUR': f'{float(eur_brl.get_ask()):.2f}'
+            'USD': f'{float(moedas["quotes"]["USDBRL"]):.2f}',
+            'EUR': f'{(1 / float(moedas["quotes"]["USDEUR"])) * float(moedas["quotes"]["USDBRL"]):.2f}',
+            'GBP': f'{(1 / float(moedas["quotes"]["USDGBP"])) * float(moedas["quotes"]["USDBRL"]):.2f}',
+            'BTC': f'{(1 / float(moedas["quotes"]["USDBTC"])) * float(moedas["quotes"]["USDBRL"]):.2f}',
         }
     }
 

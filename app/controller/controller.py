@@ -30,7 +30,11 @@ def fonts(filename):
 @app.route('/')
 def index():
     dicionario = model.cotar()
-    return template("cotacao", dicionario=dicionario)
+
+    if dicionario['sucesso']:
+        return template("cotacao", dicionario=dicionario)
+    else:
+        return template('error', dicionario=dicionario)
 
 
 
