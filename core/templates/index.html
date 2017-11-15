@@ -1,4 +1,5 @@
-% rebase('base.html')
+{% extends "base.html" %}
+{% block content %}
 
     <!-- CONTAINER BEGIN -->
     <div class="container">
@@ -10,8 +11,7 @@
                     <i class="fa fa-rebel"></i>
                     <strong>
                       <a href="http://github.com/Riverfount"> Vicente Marçal</a>
-                    </strong> Desenvolvedor
-                    Python/Bottle
+                    </strong> Desenvolvedor Python/Flask
                 </h5>
                 <h6>
                     Design by <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
@@ -116,7 +116,7 @@
                                     </p>
                                     <p>
                                         <small>
-                                            Última consulta em {{ dicionario['date'] }}
+                                            Última consulta em {{dicionario['date']}}
                                         </small>
                                     </p>
                                     <p>
@@ -131,3 +131,4 @@
         </div>
     </div>
     <!-- CONATINER END -->
+{% endblock content %}

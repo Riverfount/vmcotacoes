@@ -6,13 +6,14 @@ from decouple import config
 def cotar():
 
     # Configurações para realizar a consulta das cotações
-    api_key = config('api_key')  # Chave de Autenticação do Serviço
+
+    API_KEY = config('API_KEY')  # Chave de Autenticação do Serviço
     currencies = 'BRL, EUR, GBP, BTC'  # Moedas que serão cotadas
 
     # Faz a cotação na API do CurrencyLayer
 
-    queue = requests.get(f'http://apilayer.net/api/live?access_key={api_key}&currencies={currencies}&format=1')
-    moedas = queue.json() # Converte os dados recebidos em JSON num dicionário Python
+    queue = requests.get(f'http://apilayer.net/api/live?access_key={API_KEY}&currencies={currencies}&format=1')
+    moedas = queue.json()  # Converte os dados recebidos em JSON num dicionário Python
 
     # Se houve algum erro na consulta, retorna um dcionário com o Código e Mensagem de Erro
     if not moedas['success']:
@@ -23,7 +24,7 @@ def cotar():
         }
         return mensagem
 
-    time = datetime.fromtimestamp(moedas['timestamp']) # Converte o Timestamp em dada em formato para humanos
+    time = datetime.fromtimestamp(moedas['timestamp'])  # Converte o Timestamp em dada em formato para humanos
 
     # Constrói o diconário de retorno com a data, hora e cotações do Dólar, Euro, Libra Esterlina e Biticoins
 
