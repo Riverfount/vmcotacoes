@@ -1,5 +1,7 @@
 # Projeo Cotações de Moedas estrangeiras
 
+[![Code Health](https://landscape.io/github/Riverfount/ProjetoAppBottle/master/landscape.svg?style=plastic)](https://landscape.io/github/Riverfount/ProjetoAppBottle/master)
+[![Build Status](https://travis-ci.org/Riverfount/ProjetoAppBottle.svg?branch=master)](https://travis-ci.org/Riverfount/ProjetoAppBottle)
 [![Updates](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
 [![Python 3](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
 
@@ -14,7 +16,7 @@ seguintes moedas:
 - Bitcoin
 
 A aplicação procurou seguir o padrão MVC utilizando-se do micro framework em 
-**Python** _Bottle_ para o back-end e o framework _BootStrap_ para o front-end.
+**Python** _Flask_ para o back-end e o framework _BootStrap_ para o front-end.
 
 >O projeto está hospedado no Heroku, aqueles que tiverem curiosidade de vê-lo
 funcionando basta acessar [vmcotacoes](https://vmcotacoes.herokuapp.com/).
