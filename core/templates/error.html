@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- CONTAINER BEGIN -->
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Algo deu errado!</h4>
+        <p>Ocorreu um erro na consulta à API, o erro foi:</p>
+        <hr>
+        <p class="mb-0">
+            {{ dicionario['code'] }} <br />
+            {{ dicionario['info'] }}
+        </p>
+    </div>
+<!-- CONATINER END -->
+{% endblock content %}
