@@ -1,0 +1,27 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://apilayer.net/api/live?access_key=3cb2c4a5f6c36d5e389cfe0e5df9de82&currencies=BRL,%20EUR,%20GBP,%20BTC&format=1
+  response:
+    body: {string: "{\n  \"success\":true,\n  \"terms\":\"https:\\/\\/currencylayer.com\\/terms\",\n
+        \ \"privacy\":\"https:\\/\\/currencylayer.com\\/privacy\",\n  \"timestamp\":1511206458,\n
+        \ \"source\":\"USD\",\n  \"quotes\":{\n    \"USDBRL\":3.257102,\n    \"USDEUR\":0.852199,\n
+        \   \"USDGBP\":0.75512,\n    \"USDBTC\":0.000122\n  }\n}"}
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Connection: [keep-alive]
+      Content-Type: [application/json; Charset=UTF-8]
+      Date: ['Mon, 20 Nov 2017 20:09:28 GMT']
+      Etag: [6c38c5eed7db8dbf8c59ef34c49f81e1]
+      Last-Modified: ['Mon, 20 Nov 2017 19:34:18 GMT']
+      Server: [nginx]
+      X-Apilayer-Transaction-Id: [335ae178-b395-4345-a3ae-2349fec2ddea]
+      X-Request-Time: ['0.027']
+    status: {code: 200, message: OK}
+version: 1

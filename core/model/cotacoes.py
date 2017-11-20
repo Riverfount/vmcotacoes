@@ -40,3 +40,4 @@ def cotar():
     }
 
     return moeda
+

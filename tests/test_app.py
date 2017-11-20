@@ -1,13 +1,8 @@
-import pytest
+import vcr
 from flask import url_for
+from core.model.cotacoes import cotar
 
-from core.app import create_app
-
-
-@pytest.fixture
-def instance_app():
-    instance_app = create_app()
-    return instance_app
+# Tests about the app instantiation
 
 
 def test_app_exists(instance_app):
@@ -18,14 +13,17 @@ def test_app_static_folder(instance_app):
     assert instance_app.has_static_folder
 
 
-def test_template_folder(instance_app):
+def test_app_template_folder(instance_app):
     assert instance_app.template_folder
 
 
-def test_status_code(client):
+def test_app_status_code(client):
     assert client.get(url_for('home')).status_code == 200
 
+# Test about the result of app
 
-def test_status_code_apilayer(mocker):
-    request_mock = mocker.patch('core.model.cotacoes.cotar')
-    assert request_mock.get.return_value.status_code == 200
+
+@vcr.use_cassette('tests/fixtures/vcr_cassettes/data_success.yaml')
+def test_api_data_success():
+    data_success = cotar()
+    assert data_success  # Teste besta só exemplo
