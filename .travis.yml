@@ -8,7 +8,7 @@ install:
 
 script:
   - flake8 .
-  - pytest --cov=core
+  - pytest
 after_success:
   - codecov
 #notifications:

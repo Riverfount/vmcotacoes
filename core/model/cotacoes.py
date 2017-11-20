@@ -30,6 +30,7 @@ def cotar():
 
     moeda = {
         'sucesso': moedas['success'],
+        'code': 200,
         'date': f'{time.day}/{time.month}/{time.year} as {time.hour}h{time.minute}min.',
         'rates': {
             'USD': f'{float(moedas["quotes"]["USDBRL"]):.2f}',
@@ -40,4 +41,3 @@ def cotar():
     }
 
     return moeda
-
