@@ -1,14 +1,15 @@
 # Projeo Cotações de Moedas estrangeiras
 
-[![Code Health](https://landscape.io/github/Riverfount/ProjetoAppBottle/master/landscape.svg?style=plastic)](https://landscape.io/github/Riverfount/ProjetoAppBottle/master)
-[![Build Status](https://travis-ci.org/Riverfount/ProjetoAppBottle.svg?branch=master)](https://travis-ci.org/Riverfount/ProjetoAppBottle)
-[![codecov](https://codecov.io/gh/Riverfount/ProjetoAppBottle/branch/master/graph/badge.svg)](https://codecov.io/gh/Riverfount/ProjetoAppBottle)
-[![Updates](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
-[![Python 3](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
+[![Code Health](https://landscape.io/github/Riverfount/Cotacoes/master/landscape.svg?style=flat)](https://landscape.io/github/Riverfount/Cotacoes/master)
+[![Build Status](https://travis-ci.org/Riverfount/Cotacoes.svg?branch=master)](https://travis-ci.org/Riverfount/Cotacoes)
+[![codecov](https://codecov.io/gh/Riverfount/Cotacoes/branch/master/graph/badge.svg)](https://codecov.io/gh/Riverfount/Cotacoes)
+[![Updates](https://pyup.io/repos/github/Riverfount/Cotacoes/shield.svg)](https://pyup.io/repos/github/Riverfount/Cotacoes/)
+[![Python 3](https://pyup.io/repos/github/Riverfount/Cotacoes/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/Cotacoes/)
 
 
 
-Pequena aplicação desenvolvida em **Python** que utiliza a API da [CurrencyLayer](https://currencylayer.com/), apresentando a cotação das
+Pequena aplicação desenvolvida em **Python** e **Flask** que utiliza a API da [CurrencyLayer](https://currencylayer
+.com/), apresentando a cotação das
 seguintes moedas:
 
 - Dólar
