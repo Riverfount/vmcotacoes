@@ -2,6 +2,7 @@
 
 [![Code Health](https://landscape.io/github/Riverfount/ProjetoAppBottle/master/landscape.svg?style=plastic)](https://landscape.io/github/Riverfount/ProjetoAppBottle/master)
 [![Build Status](https://travis-ci.org/Riverfount/ProjetoAppBottle.svg?branch=master)](https://travis-ci.org/Riverfount/ProjetoAppBottle)
+[![codecov](https://codecov.io/gh/Riverfount/ProjetoAppBottle/branch/master/graph/badge.svg)](https://codecov.io/gh/Riverfount/ProjetoAppBottle)
 [![Updates](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
 [![Python 3](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/ProjetoAppBottle/)
 

@@ -1,7 +1,7 @@
 import os
-from flask import Flask, render_template
 from decouple import config
-from core.model import model
+from flask import Flask, render_template
+from core.model import cotacoes
 
 
 def create_app():
@@ -11,7 +11,7 @@ def create_app():
 
     @app.route('/')
     def home():
-        dicionario = model.cotar()
+        dicionario = cotacoes.cotar()
 
         if dicionario['sucesso']:
             return render_template("index.html", dicionario=dicionario)
