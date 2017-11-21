@@ -1,15 +1,14 @@
 # Projeo Cotações de Moedas estrangeiras
 
 [![Code Health](https://landscape.io/github/Riverfount/Cotacoes/master/landscape.svg?style=flat)](https://landscape.io/github/Riverfount/Cotacoes/master)
-[![Build Status](https://travis-ci.org/Riverfount/ProjetoAppBottle.svg?branch=master)](https://travis-ci.org/Riverfount/ProjetoAppBottle)
+[![Build Status](https://travis-ci.org/Riverfount/Cotacoes.svg?branch=master)](https://travis-ci.org/Riverfount/Cotacoes)
 [![codecov](https://codecov.io/gh/Riverfount/Cotacoes/branch/master/graph/badge.svg)](https://codecov.io/gh/Riverfount/Cotacoes)
 [![Updates](https://pyup.io/repos/github/Riverfount/Cotacoes/shield.svg)](https://pyup.io/repos/github/Riverfount/Cotacoes/)
 [![Python 3](https://pyup.io/repos/github/Riverfount/Cotacoes/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/Cotacoes/)
 
 
 
-Pequena aplicação desenvolvida em **Python** e **Flask** que utiliza a API da [CurrencyLayer](https://currencylayer
-.com/), apresentando a cotação das
+Pequena aplicação desenvolvida em **Python** e **Flask** que utiliza a API da [CurrencyLayer](https://currencylayer.com/), apresentando a cotação das
 seguintes moedas:
 
 - Dólar
