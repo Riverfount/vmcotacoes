@@ -1,6 +1,7 @@
-import yaml
 import vcr
+import yaml
 from flask import url_for
+
 from core.model.cotacoes import cotar
 
 # VCRPY Set up
@@ -8,8 +9,6 @@ my_vcr = vcr.VCR(filter_query_parameters=['access_key'],
                  cassette_library_dir='tests/fixtures/vcr_cassettes',
                  record_mode='once',
                  match_on=['url', ])
-
-# Tests about the app instantiation
 
 
 def test_app_exists(instance_app):
@@ -27,8 +26,6 @@ def test_app_template_folder(instance_app):
 @my_vcr.use_cassette('data_success.yaml')
 def test_app_status_code(client):
     assert client.get(url_for('home')).status_code == 200
-
-# Test about the result of app
 
 
 @my_vcr.use_cassette('data_success.yaml')
