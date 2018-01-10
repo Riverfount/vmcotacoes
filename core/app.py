@@ -14,9 +14,12 @@ def create_app():
         dicionario = cotacoes.cotar()
 
         if dicionario['sucesso']:
-            return render_template("index.html", dicionario=dicionario)
+            template_renderised = render_template("index.html", dicionario=dicionario)
         else:
-            return render_template('error.html', dicionario=dicionario)
+            template_renderised = render_template('error.html', dicionario=dicionario)
+
+        return template_renderised
+
     return app
 
 
