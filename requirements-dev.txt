@@ -15,7 +15,7 @@ PyYAML==3.12
 six==1.11.0
 vcrpy==1.11.1
 wrapt==1.10.11
-yarl==0.18.0
+yarl==1.1.0
 
 -r requirements.txt
 
