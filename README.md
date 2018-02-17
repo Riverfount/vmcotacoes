@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/Riverfount/Cotacoes/branch/master/graph/badge.svg)](https://codecov.io/gh/Riverfount/Cotacoes)
 [![Updates](https://pyup.io/repos/github/Riverfount/Cotacoes/shield.svg)](https://pyup.io/repos/github/Riverfount/Cotacoes/)
 [![Python 3](https://pyup.io/repos/github/Riverfount/Cotacoes/python-3-shield.svg)](https://pyup.io/repos/github/Riverfount/Cotacoes/)
-
+[![Requirements Status](https://requires.io/github/Riverfount/Cotacoes/requirements.svg?branch=master)](https://requires.io/github/Riverfount/Cotacoes/requirements/?branch=master)
 
 
 Pequena aplicação desenvolvida em **Python** e **Flask** que utiliza a API da [CurrencyLayer](https://currencylayer.com/), apresentando a cotação das
