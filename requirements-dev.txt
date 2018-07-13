@@ -13,7 +13,7 @@ pytest-cov==2.5.1
 pytest-flask==0.10.0
 PyYAML==3.12
 six==1.11.0
-vcrpy==1.11.1
+vcrpy==1.13.0
 wrapt==1.10.11
 yarl==1.2.4
 
