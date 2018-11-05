@@ -5,7 +5,7 @@ flask==1.0.2
 idna==2.7
 itsdangerous==0.24
 Jinja2==2.10
-MarkupSafe==1.0
+MarkupSafe==1.1.0
 python-decouple==3.1
 pytz==2018.4
 requests==2.19.1
