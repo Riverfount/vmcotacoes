@@ -1,13 +1,13 @@
 import requests
 from datetime import datetime
-from decouple import config
+from core.config import settings
 
 
 def cotar():
 
     # Configurações para realizar a consulta das cotações
 
-    API_KEY = config('API_KEY')  # Chave de Autenticação do Serviço
+    API_KEY = settings.API_KEY  # Chave de Autenticação do Serviço
     currencies = 'BRL, EUR, GBP, BTC'  # Moedas que serão cotadas
 
     # Faz a cotação na API do CurrencyLayer

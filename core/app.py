@@ -1,13 +1,12 @@
-import os
-from decouple import config
-from flask import Flask, render_template
 from core.model import cotacoes
+from flask import Flask, render_template
+
+from .config import settings
 
 
 def create_app():
-
     app = Flask('core')
-    app.config["SECRET_KEY"] = config('SECRET_KEY')
+    app.config["SECRET_KEY"] = settings.SECRET_KEY
 
     @app.route('/')
     def home():
@@ -21,9 +20,3 @@ def create_app():
         return template_renderised
 
     return app
-
-
-if __name__ == '__main__':
-    app = create_app()
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
