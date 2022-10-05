@@ -1,14 +1,6 @@
-import vcr
-import yaml
+from unittest.mock import patch
+
 from flask import url_for
-
-from core.model.cotacoes import cotar
-
-# VCRPY Set up
-my_vcr = vcr.VCR(filter_query_parameters=['access_key'],
-                 cassette_library_dir='tests/fixtures/vcr_cassettes',
-                 record_mode='once',
-                 match_on=['url', ])
 
 
 def test_app_exists(instance_app):
@@ -23,13 +15,20 @@ def test_app_template_folder(instance_app):
     assert instance_app.template_folder
 
 
-@my_vcr.use_cassette('data_success.yaml')
-def test_app_status_code(client):
-    assert client.get(url_for('home')).status_code == 200
-
-
-@my_vcr.use_cassette('data_success.yaml')
-def test_api_data_success():
-    data_success = cotar()
-    with open('tests/fixtures/vcr_cassettes/data_success.yaml', 'r') as f:
-        assert yaml.load(f)['interactions'][0]['response']['status']['code'] == data_success['code']
+@patch('core.app.cotacoes.cotar')
+def test_app_status_code_200_ok(mock_cotar, client):
+    mock_cotar.return_value = {
+        'sucesso': True,
+        'code': 200,
+        'date': '05/10/2022 as 12h03min.',
+        'rates': {
+            'USD': '5.23',
+            'EUR': '1.01',
+            'GBP': '0.88',
+            'BTC': '5.02',
+        }
+    }
+    response = client.get(url_for('home'))
+    assert response.status_code == 200
+    assert 'Cotado a: <span class="bg-success">R$ 5.23</span>' in response.text
+    assert 'Última consulta em 05/10/2022 as 12h03min.' in response.text
