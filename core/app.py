@@ -1,12 +1,10 @@
-from core.model import cotacoes
 from flask import Flask, render_template
 
-from .config import settings
+from core.model import cotacoes
 
 
 def create_app():
     app = Flask('core')
-    app.config["SECRET_KEY"] = settings.SECRET_KEY
 
     @app.route('/')
     def home():
