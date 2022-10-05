@@ -100,6 +100,24 @@ tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.1
 toml = ["tomli"]
 
 [[package]]
+name = "dynaconf"
+version = "3.1.11"
+description = "The dynamic configurator for your Python Project"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+all = ["configobj", "hvac", "redis", "ruamel.yaml"]
+configobj = ["configobj"]
+ini = ["configobj"]
+redis = ["redis"]
+test = ["codecov", "configobj", "django", "flake8", "flake8-debugger", "flake8-print", "flake8-todo", "flask (>=0.12)", "hvac", "pep8-naming", "pytest", "pytest-cov", "pytest-mock", "pytest-xdist", "python-dotenv", "radon", "redis", "toml"]
+toml = ["toml"]
+vault = ["hvac"]
+yaml = ["ruamel.yaml"]
+
+[[package]]
 name = "flake8"
 version = "5.0.4"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -310,14 +328,6 @@ Werkzeug = ">=0.7"
 docs = ["Sphinx", "sphinx-rtd-theme"]
 
 [[package]]
-name = "python-decouple"
-version = "3.6"
-description = "Strict separation of settings from code."
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "pytz"
 version = "2022.4"
 description = "World timezone definitions, modern and historical"
@@ -439,7 +449,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "aee3baf36e000f1b1995ff7c51ab607e44fd8c7b9ccfc6a4e2d8039d46e152bd"
+content-hash = "b502a20e2a250ea0bf34158e16b2978551cbd3e0e42bebb3312ffd9807148662"
 
 [metadata.files]
 attrs = [
@@ -525,6 +535,10 @@ coverage = [
     {file = "coverage-6.5.0-cp39-cp39-win_amd64.whl", hash = "sha256:fc2af30ed0d5ae0b1abdb4ebdce598eafd5b35397d4d75deb341a614d333d987"},
     {file = "coverage-6.5.0-pp36.pp37.pp38-none-any.whl", hash = "sha256:1431986dac3923c5945271f169f59c45b8802a114c8f548d611f2015133df77a"},
     {file = "coverage-6.5.0.tar.gz", hash = "sha256:f642e90754ee3e06b0e7e51bce3379590e76b7f76b708e1a71ff043f87025c84"},
+]
+dynaconf = [
+    {file = "dynaconf-3.1.11-py2.py3-none-any.whl", hash = "sha256:87e0b3b12b5db9e8fb465e1f8c7fdb926cd2ec5b6d88aa7f821f316df93fb165"},
+    {file = "dynaconf-3.1.11.tar.gz", hash = "sha256:d9cfb50fd4a71a543fd23845d4f585b620b6ff6d9d3cc1825c614f7b2097cb39"},
 ]
 flake8 = [
     {file = "flake8-5.0.4-py2.py3-none-any.whl", hash = "sha256:7a1cf6b73744f5806ab95e526f6f0d8c01c66d7bbe349562d22dfca20610b248"},
@@ -696,10 +710,6 @@ pytest-cov = [
 pytest-flask = [
     {file = "pytest-flask-1.2.0.tar.gz", hash = "sha256:46fde652f77777bf02dc91205aec4ce20cdf2acbbbd66a918ab91f5c14693d3d"},
     {file = "pytest_flask-1.2.0-py3-none-any.whl", hash = "sha256:fe25b39ad0db09c3d1fe728edecf97ced85e774c775db259a6d25f0270a4e7c9"},
-]
-python-decouple = [
-    {file = "python-decouple-3.6.tar.gz", hash = "sha256:2838cdf77a5cf127d7e8b339ce14c25bceb3af3e674e039d4901ba16359968c7"},
-    {file = "python_decouple-3.6-py3-none-any.whl", hash = "sha256:6cf502dc963a5c642ea5ead069847df3d916a6420cad5599185de6bab11d8c2e"},
 ]
 pytz = [
     {file = "pytz-2022.4-py2.py3-none-any.whl", hash = "sha256:2c0784747071402c6e99f0bafdb7da0fa22645f06554c7ae06bf6358897e9c91"},
