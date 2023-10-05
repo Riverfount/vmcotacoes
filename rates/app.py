@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from core.model import cotacoes
+from rates.busines_rules import cotacoes
 
 
 def create_app():

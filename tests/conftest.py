@@ -1,4 +1,4 @@
-from core.app import create_app
+from rates.app import create_app
 import pytest
 
 
