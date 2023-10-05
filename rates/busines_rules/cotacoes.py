@@ -1,19 +1,19 @@
 import requests
 from datetime import datetime
-from core.config import settings
+from rates.config import settings
+
+API_KEY = settings.security.API_KEY  # Chave de Autenticação do Serviço
 
 
 def cotar():
-
     # Configurações para realizar a consulta das cotações
 
-    API_KEY = settings.API_KEY  # Chave de Autenticação do Serviço
     currencies = 'BRL, EUR, GBP, BTC'  # Moedas que serão cotadas
 
     # Faz a cotação na API do CurrencyLayer
 
-    queue = requests.get(f'http://apilayer.net/api/live?access_key={API_KEY}&currencies={currencies}&format=1')
-    moedas = queue.json()  # Converte os dados recebidos em JSON num dicionário Python
+    query = requests.get(f'http://apilayer.net/api/live?access_key={API_KEY}&currencies={currencies}&format=1')
+    moedas = query.json()  # Converte os dados recebidos em JSON num dicionário Python
 
     # Se houve algum erro na consulta, retorna um dcionário com o Código e Mensagem de Erro
     if not moedas['success']:

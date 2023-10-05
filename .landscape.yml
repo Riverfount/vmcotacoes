@@ -1,5 +1,0 @@
-python-targets:
-  - 3
-
-uses:
-  - flask
