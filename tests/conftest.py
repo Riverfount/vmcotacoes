@@ -1,15 +1,13 @@
-from rates.app import create_app
-import pytest
+import pytest_asyncio
+from asgi_lifespan import LifespanManager
+from httpx import AsyncClient
+
+from rates.app import app
 
 
-@pytest.fixture()
-def app():
-    app = create_app()
-    app.debug = True
-    return app
-
-
-@pytest.fixture
-def instance_app():
-    instance_app = create_app()
-    return instance_app
+@pytest_asyncio.fixture
+async def client():
+    """This fixture provide an async test client to do all the requests to the fastAPI endpoints."""
+    async with LifespanManager(app):
+        async with AsyncClient(app=app, base_url='http://test', follow_redirects=True) as ac:
+            yield ac

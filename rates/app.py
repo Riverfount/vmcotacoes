@@ -1,20 +1,8 @@
-from flask import Flask, render_template
+from fastapi import FastAPI
 
-from rates.busines_rules import cotacoes
+app = FastAPI()
 
 
-def create_app():
-    app = Flask('core')
-
-    @app.route('/')
-    def home():
-        dicionario = cotacoes.cotar()
-
-        if dicionario['sucesso']:
-            template_renderised = render_template("index.html", dicionario=dicionario)
-        else:
-            template_renderised = render_template('error.html', dicionario=dicionario)
-
-        return template_renderised
-
-    return app
+@app.get('/health')
+def health():
+    return {'message': 'The Api is 100% healthy.'}
